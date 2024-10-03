@@ -1,7 +1,7 @@
 export interface Product {
     title:string,
     imageCover:string
-    ratingAverage:number,
+ratingsAverage:number,
     id:string,
     price:number,
     category:Categories,

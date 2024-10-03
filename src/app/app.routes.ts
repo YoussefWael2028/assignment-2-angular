@@ -11,6 +11,8 @@ import { CheckoutComponent } from './features/checkout/checkout.component';
 import { OrderComponent } from './features/order/order.component';
 import { RegisterComponent } from './Core/Pages/register/register/register.component';
 import { LoginComponent } from './Core/Pages/login/login/login.component';
+import { ForgotPasswordComponent } from './Core/Pages/forgot-password/forgot-password.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,5 +26,6 @@ export const routes: Routes = [
   { path: 'productDetails/:id', component: ProductDetailsComponent},
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
+  {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"**",component:NotFoundComponent},
 ];

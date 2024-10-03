@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, ValidationErrors } from '@angular/f
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+ 
   LoginForm: FormGroup;
   apiErrorMessage: string = '';
   callingAPI: boolean = false;
@@ -28,6 +30,7 @@ export class LoginComponent {
   }
 
   login() {
+    let token!:string;
     if (this.LoginForm.valid) {
       this.apiErrorMessage = '';
       this.callingAPI = true;
@@ -36,6 +39,8 @@ export class LoginComponent {
           console.log(res);
           this.callingAPI = false;
           this.router.navigate(['/home']);
+          token=res.token
+          localStorage.setItem('token', token);
         },
         (err) => {
           console.error(err);
